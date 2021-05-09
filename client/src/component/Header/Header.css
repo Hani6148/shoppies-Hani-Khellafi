@@ -1,0 +1,10 @@
+.header {
+  padding: 3vh 0 3vh 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: black;
+  z-index: 1000;
+}
