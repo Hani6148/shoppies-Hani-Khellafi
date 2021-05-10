@@ -10,10 +10,13 @@ export const MovieSearchResult = props => {
     useEffect(() => {
         axios.get("/api/nominations")
             .then(data => {
+
                 const nominated = data.data
-                console.log(nominated)
+                console.log(nominated[0]._id)
+                if (nominated.length == 37) {
+                    setBannerVisibility(true)
+                }
                 setnominationList(nominated)
-                console.log("hadi aw del search context", nominationList)
 
 
             })

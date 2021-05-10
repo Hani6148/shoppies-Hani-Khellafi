@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { MovieSearchContext } from "./../../../context/MovieSearchContext"
 import axios from "axios"
 
 function MovieCard(props) {
-
+    const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
     const [nominated, setNominated] = useState(false)
     const saveNomination = e => {
         e.preventDefault()
@@ -10,7 +11,7 @@ function MovieCard(props) {
 
         axios.get("/api/nominations")
             .then(data => {
-                if (data.data.length < 4) {
+                if (data.data.length < 37) {
 
                     axios.post("/api/nominations", {
                         title: props.movieTitle,
@@ -18,12 +19,13 @@ function MovieCard(props) {
                         poster: props.movieImg
                     }).then(data => {
                         setNominated(true)
+                        setNominationList(data.data)
                     })
 
                 }
 
                 else {
-                    alert("you reach mazimum ")
+                    setBannerVisibility(true)
                 }
             })
 
@@ -40,7 +42,7 @@ function MovieCard(props) {
                     <p className="card-text">
                         {props.movieYear}
                     </p>
-                    <a className={`btn btn-primary ${nominated ? "disabled bg-secondary text-white  border border-white" : null}`} onClick={saveNomination} >{nominated ? "Nominated" : "Nominate"}</a>
+                    <a className={`btn btn-primary text-white ${nominated ? "disabled bg-secondary border border-white" : null}`} onClick={saveNomination} >{nominated ? "Nominated" : "Nominate"}</a>
                 </div>
             </div>
         </div>

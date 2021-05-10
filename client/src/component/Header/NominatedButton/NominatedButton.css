@@ -2,4 +2,7 @@
   position: relative;
   left: 75vw;
   top: -18vh;
+  overflow-y: visible;
+  overflow-x: visible;
+  display: block;
 }

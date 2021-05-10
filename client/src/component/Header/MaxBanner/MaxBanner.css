@@ -1,0 +1,10 @@
+.banner {
+  height: fit-content;
+  margin-bottom: 2vh;
+  background-color: white;
+}
+
+.banner-text {
+  width: fit-content;
+  margin: auto;
+}

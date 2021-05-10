@@ -23,3 +23,6 @@
 .nominated-container-hidden {
   display: none;
 }
+.wrapper {
+  position: relative;
+}

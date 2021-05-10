@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import "./NominatedListItem.css"
+import { MovieSearchContext } from "./../../../context/MovieSearchContext"
+import axios from "axios"
 function NominatedListItem(props) {
 
+    const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
+    const deleteEntry = e => {
+        e.preventDefault()
+        console.log(props.Id)
 
+        axios.delete(`/api/nominations/${props.Id}`)
+            .then(data => {
+
+                setBannerVisibility(false)
+                setNominationList(data.data)
+
+
+            })
+
+
+
+    }
     return (
 
         <div className="col-sm-12" style={{ marginBottom: "1vh" }}>
@@ -13,7 +31,7 @@ function NominatedListItem(props) {
                     <p className="card-text">
                         {props.movieYear}
                     </p>
-                    <a className="btn btn-danger text-white" >Remove</a>
+                    <a className="btn btn-danger text-white" onClick={deleteEntry}>Remove</a>
                 </div>
             </div>
         </div>
@@ -21,3 +39,10 @@ function NominatedListItem(props) {
 }
 
 export default NominatedListItem
+
+
+
+
+
+
+
