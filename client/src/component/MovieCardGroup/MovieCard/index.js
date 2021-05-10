@@ -8,13 +8,26 @@ function MovieCard(props) {
         e.preventDefault()
         console.log("hey")
 
-        axios.post("/api/nominations", {
-            title: props.movieTitle,
-            year: props.movieYear,
-            poster: props.movieImg
-        }).then(data => {
-            setNominated(true)
-        })
+        axios.get("/api/nominations")
+            .then(data => {
+                if (data.data.length < 4) {
+
+                    axios.post("/api/nominations", {
+                        title: props.movieTitle,
+                        year: props.movieYear,
+                        poster: props.movieImg
+                    }).then(data => {
+                        setNominated(true)
+                    })
+
+                }
+
+                else {
+                    alert("you reach mazimum ")
+                }
+            })
+
+
 
     }
 
