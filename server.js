@@ -21,7 +21,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb+srv://hani6148:nani6148@cluster0.vrcdl.mongodb.net/shoppies?retryWrites=true&w=majority",
+  "mongodb+srv://hani6148:nani6148@cluster0.vrcdl.mongodb.net/shoppies?retryWrites=true&w=majority",
   {
     useCreateIndex: true,
     useNewUrlParser: true
