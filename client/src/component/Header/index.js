@@ -17,7 +17,7 @@ function Header() {
     const [NominationVisibility, setNominationVisibility] = useState(false)
 
     const showNominations = (e) => {
-        if (NominationVisibility) {
+        if (NominationVisibility || nominationList.length == 0) {
             setNominationVisibility(false)
         }
         else {

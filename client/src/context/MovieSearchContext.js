@@ -12,7 +12,6 @@ export const MovieSearchResult = props => {
             .then(data => {
 
                 const nominated = data.data
-                console.log(nominated[0]._id)
                 if (nominated.length == 37) {
                     setBannerVisibility(true)
                 }
