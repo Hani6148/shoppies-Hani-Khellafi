@@ -1,11 +1,11 @@
 import React from 'react'
 import "./NominatedButton.css"
-function NominatedButton() {
+function NominatedButton(props) {
 
 
     return (
-        <button type="button" class="btn btn-primary nomButton">
-            Nominated <span class="badge badge-light">4</span>
+        <button type="button" class="btn btn-primary nomButton" onClick={props.showNominations}>
+            Nominated <span class="badge badge-light">{props.numberofNominations}</span>
         </button>
     )
 }

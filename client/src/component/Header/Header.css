@@ -9,9 +9,17 @@
   z-index: 1000;
 }
 
-.nominated-container {
-  height: 60vh;
-  width: 35vw;
+.nominated-container-visible {
+  height: 45vh;
+  width: 20vw;
   overflow-y: scroll;
+  display: block;
+  position: absolute;
+  left: 70vw;
+  top: 15vh;
+  z-index: 1000000;
+}
+
+.nominated-container-hidden {
   display: none;
 }

@@ -23,11 +23,11 @@ function MovieCard(props) {
             <div className="card" >
                 <img className="card-img-top" style={{ height: "60vh" }} src={props.movieImg} alt="Card image cap" />
                 <div className="card-body">
-                    <h5 className="card-title" style={{ height: "5vh" }}>{props.movieTitle}</h5>
+                    <h5 className="card-title" style={{ height: "fit-content", minHeight: "7vh" }}>{props.movieTitle}</h5>
                     <p className="card-text">
                         {props.movieYear}
                     </p>
-                    <a className={`btn btn-primary ${nominated ? "disabled bg-secondary text-white  border border-white" : null}`} onClick={saveNomination} >{nominated ? "Already Nominated" : "Nominate"}</a>
+                    <a className={`btn btn-primary ${nominated ? "disabled bg-secondary text-white  border border-white" : null}`} onClick={saveNomination} >{nominated ? "Nominated" : "Nominate"}</a>
                 </div>
             </div>
         </div>
