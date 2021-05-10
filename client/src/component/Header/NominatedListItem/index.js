@@ -6,6 +6,7 @@ function NominatedListItem(props) {
 
     const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
     const deleteEntry = e => {
+
         e.preventDefault()
         console.log(props.Id)
 
@@ -13,6 +14,9 @@ function NominatedListItem(props) {
             .then(data => {
 
                 setBannerVisibility(false)
+                if (nominationList.length == 1) {
+                    props.setNominationVisibility(false)
+                }
                 setNominationList(data.data)
 
 

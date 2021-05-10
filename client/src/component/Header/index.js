@@ -17,6 +17,7 @@ function Header() {
     const [NominationVisibility, setNominationVisibility] = useState(false)
 
     const showNominations = (e) => {
+
         if (NominationVisibility || nominationList.length == 0) {
             setNominationVisibility(false)
         }
@@ -39,7 +40,7 @@ function Header() {
                         if (movie.Poster == "N/A") {
                             poster = false
                         }
-                        return (<NominatedListItem Id={movie._id} key={movie._id} movieImg={poster ? movie.poster : defaultPoster} movieTitle={movie.title} movieYear={movie.year} />)
+                        return (<NominatedListItem setNominationVisibility={setNominationVisibility} Id={movie._id} key={movie._id} movieImg={poster ? movie.poster : defaultPoster} movieTitle={movie.title} movieYear={movie.year} />)
                     })
                     }
                 </div>

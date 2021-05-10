@@ -11,7 +11,7 @@ function MovieCard(props) {
 
         axios.get("/api/nominations")
             .then(data => {
-                if (data.data.length < 37) {
+                if (data.data.length < 4) {
 
                     axios.post("/api/nominations", {
                         title: props.movieTitle,

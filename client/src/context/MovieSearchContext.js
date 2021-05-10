@@ -12,7 +12,7 @@ export const MovieSearchResult = props => {
             .then(data => {
 
                 const nominated = data.data
-                if (nominated.length == 37) {
+                if (nominated.length == 4) {
                     setBannerVisibility(true)
                 }
                 setnominationList(nominated)
