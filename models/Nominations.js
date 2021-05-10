@@ -8,6 +8,6 @@ const NomSchema = new Schema({
 
 });
 
-const Nominations = mongoose.model("Book", NomSchema);
+const Nominations = mongoose.model("Nominations", NomSchema);
 
 module.exports = Nominations;

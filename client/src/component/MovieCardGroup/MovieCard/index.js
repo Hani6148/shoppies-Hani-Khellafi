@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from "axios"
 
 function MovieCard(props) {
+
+    const [nominated, setNominated] = useState(false)
+    const saveNomination = e => {
+        e.preventDefault()
+        console.log("hey")
+
+        axios.post("/api/nominations", {
+            title: props.movieTitle,
+            year: props.movieYear,
+            poster: props.movieImg
+        }).then(data => {
+            setNominated(true)
+        })
+
+    }
+
     return (
-        <div class="col-sm-4" style={{ marginBottom: "5vh" }}>
+        <div className="col-sm-3" style={{ marginBottom: "5vh" }}>
             <div className="card" >
                 <img className="card-img-top" style={{ height: "60vh" }} src={props.movieImg} alt="Card image cap" />
                 <div className="card-body">
@@ -10,7 +27,7 @@ function MovieCard(props) {
                     <p className="card-text">
                         {props.movieYear}
                     </p>
-                    <a href="#" className="btn btn-primary">Nominate</a>
+                    <a className={`btn btn-primary ${nominated ? "disabled bg-secondary text-white  border border-white" : null}`} onClick={saveNomination} >{nominated ? "Already Nominated" : "Nominate"}</a>
                 </div>
             </div>
         </div>

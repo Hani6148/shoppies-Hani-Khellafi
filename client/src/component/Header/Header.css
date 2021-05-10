@@ -8,3 +8,10 @@
   background-color: black;
   z-index: 1000;
 }
+
+.nominated-container {
+  height: 60vh;
+  width: 35vw;
+  overflow-y: scroll;
+  display: none;
+}

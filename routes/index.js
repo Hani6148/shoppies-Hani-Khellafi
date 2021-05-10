@@ -1,14 +1,12 @@
-const router = require("../../googlebooks/routes")
-const { db } = require("../models/Nominations")
-db = require("../models")
-express = require("express")
-router = express.Router()
+const db = require("../models")
+const express = require("express")
+const router = express.Router()
 
 
 //get nominations
 
 router.get("/api/nominations", (req, res) => {
-    db.Nominations.findOne({})
+    db.Nominations.find({})
         .then(response => {
             res.json(response)
         })
@@ -37,3 +35,6 @@ router.delete("/api/nominations/:id", (req, res) => {
         .then(rNomination => res.json(rNomination))
         .catch(err => res.json(err))
 })
+
+
+module.exports = router
