@@ -10,13 +10,13 @@
 }
 
 .nominated-container-visible {
-  height: 45vh;
-  width: 20vw;
+  height: 43vh;
+  width: 18vw;
   overflow-y: scroll;
   display: block;
   position: absolute;
-  left: 70vw;
-  top: 15vh;
+  left: 71vw;
+  top: 12vh;
   z-index: 1000000;
 }
 
@@ -25,4 +25,24 @@
 }
 .wrapper {
   position: relative;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
