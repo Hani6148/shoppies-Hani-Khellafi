@@ -31,6 +31,6 @@
 
 ![maxnominations](./md__images/maxnominations.JPG)
 
-<span style="color:blue"> ### Error Handeling </span>
+<span style="color:blue">some ### Error Handeling </span>
 
 ![error](./md__images/error.JPG)
