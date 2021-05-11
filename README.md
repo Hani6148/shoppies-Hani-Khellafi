@@ -6,9 +6,7 @@
 
 ### front end
 
-#### React
-
-#### Bootstrap 4
+#### React <br/> Bootstrap 4
 
 ### Back end
 
