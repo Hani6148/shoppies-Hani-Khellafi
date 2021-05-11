@@ -16,4 +16,4 @@
 
 ### Landing View
 
-![Landing view](./md_images/landing.jpg)
+![Landing view](./md_images/landing.JPG)
