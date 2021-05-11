@@ -23,9 +23,10 @@ function SearchBar() {
 
                 if (searchResponse) {
                     setMovies(preMovies => searchResponse)
-
+                    setError(false)
                 }
                 else {
+                    setMovies(preMovies => [])
                     setError(true)
                 }
             })
