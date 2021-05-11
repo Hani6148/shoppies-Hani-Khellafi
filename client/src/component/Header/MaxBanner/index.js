@@ -4,7 +4,7 @@ function MaxBanner() {
     return (
 
         <div class="container-fluid banner">
-            <h4 class="display-4 banner-text">Your reached the maximum number of nomination</h4>
+            <h4 class="display-4 banner-text">You reached the maximum number of nominations</h4>
         </div>
 
     )
