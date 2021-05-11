@@ -17,3 +17,12 @@
 ### Landing View
 
 ![Landing view](./md__images/landing.JPG)
+
+### Movie Searching
+
+![Searching](./md__images/searching.JPG)
+
+### Movie Nominating
+
+![nominated](./md__images/nominated.JPG)
+![nominated list](./md__images/nomList.JPG)
