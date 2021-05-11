@@ -10,8 +10,4 @@
 
 ### Back end
 
-#### Node
-
-#### Express 4
-
-#### MongoDB
+#### Node <br/> Express 4 <br/> MongoDB
