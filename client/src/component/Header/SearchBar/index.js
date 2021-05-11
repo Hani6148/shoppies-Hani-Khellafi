@@ -13,6 +13,7 @@ function SearchBar() {
 
 
     const [movieInput, setMovieInput] = useState("")
+    const [error, setError] = useState(false)
     const [movies, setMovies] = useContext(MovieSearchContext)
     const buttonSubmit = e => {
 
@@ -20,8 +21,13 @@ function SearchBar() {
             .then(response => {
                 const searchResponse = response.data.Search
 
-                setMovies(preMovies => searchResponse)
+                if (searchResponse) {
+                    setMovies(preMovies => searchResponse)
 
+                }
+                else {
+                    setError(true)
+                }
             })
             .catch(error => {
                 console.log(error)
@@ -30,14 +36,16 @@ function SearchBar() {
 
     return (
 
+        <div>
+            <div className="input-group mb-3 search-bar">
+                <div className="input-group-prepend">
+                    <SearchButton handleSubmit={buttonSubmit} />
+                </div>
+                <SearchInput movieInput={movieInput} setMovieInput={setMovieInput} />
 
-        <div className="input-group mb-3 search-bar">
-            <div className="input-group-prepend">
-                <SearchButton handleSubmit={buttonSubmit} />
             </div>
-            <SearchInput movieInput={movieInput} setMovieInput={setMovieInput} />
+            {error ? (<p style={{ color: "red", width: "fit-content", margin: "auto" }}>No Search Found</p>) : null}
         </div>
-
     )
 }
 
