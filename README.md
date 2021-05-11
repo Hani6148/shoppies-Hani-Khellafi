@@ -14,23 +14,23 @@
 
 ## Demo
 
-<span style="color:blue"> ### Landing View </span>
+### Landing View
 
 ![Landing view](./md__images/landing.JPG)
 
-<span style="color:blue"> ### Movie Searching </span>
+### Movie Searching
 
 ![Searching](./md__images/searching.JPG)
 
-<span style="color:blue"> ### Movie Nominating </span>
+### Movie Nominating
 
 ![nominated](./md__images/nominated.JPG)
 ![nominated list](./md__images/nomList.JPG)
 
-<span style="color:blue"> ### Reaching Maximum number of nominations </span>
+### Reaching Maximum number of nominations
 
 ![maxnominations](./md__images/maxnominations.JPG)
 
-<span style="color:blue">some ### Error Handeling </span>
+### Error Handeling
 
 ![error](./md__images/error.JPG)
