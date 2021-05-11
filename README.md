@@ -26,3 +26,11 @@
 
 ![nominated](./md__images/nominated.JPG)
 ![nominated list](./md__images/nomList.JPG)
+
+### Reaching Maximum number of nominations
+
+![maxnominations](./md__images/maxnominations.JPG)
+
+### Error Handeling
+
+![error](./md__images/error.JPG)
