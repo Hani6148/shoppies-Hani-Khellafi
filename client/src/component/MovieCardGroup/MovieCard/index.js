@@ -4,7 +4,6 @@ import axios from "axios"
 
 function MovieCard(props) {
     const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
-    const [nominated, setNominated] = useState(false)
     const saveNomination = e => {
         e.preventDefault()
         console.log("hey")
@@ -18,7 +17,6 @@ function MovieCard(props) {
                         year: props.movieYear,
                         poster: props.movieImg
                     }).then(data => {
-                        setNominated(true)
                         setNominationList(data.data)
                     })
 
@@ -42,7 +40,7 @@ function MovieCard(props) {
                     <p className="card-text">
                         {props.movieYear}
                     </p>
-                    <a className={`btn btn-primary text-white ${nominated ? "disabled bg-secondary border border-white" : null}`} onClick={saveNomination} >{nominated ? "Nominated" : "Nominate"}</a>
+                    <a className={`btn btn-primary text-white ${props.nominated ? "disabled bg-secondary border border-white" : null}`} onClick={saveNomination} >{props.nominated ? "Nominated" : "Nominate"}</a>
                 </div>
             </div>
         </div>
