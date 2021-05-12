@@ -4,18 +4,22 @@ import axios from "axios"
 import SearchButton from './SearchButton'
 import SearchInput from './SearchInput'
 import "./SearchBar.css"
+import { useHistory } from 'react-router-dom';
+
 const API_URL = "https://www.omdbapi.com/?";
 const API_KEY = "4379d9ae";
 const queryType = "Movie";
 
 
-function SearchBar() {
+function SearchBar(props) {
 
+    const history = useHistory();
 
     const [movieInput, setMovieInput] = useState("")
     const [error, setError] = useState(false)
     const [movies, setMovies] = useContext(MovieSearchContext)
     const buttonSubmit = e => {
+
 
         axios.get(`${API_URL}s=${movieInput}&type=${queryType}&apikey=${API_KEY}&plot="full"`)
             .then(response => {
@@ -33,6 +37,9 @@ function SearchBar() {
             .catch(error => {
                 console.log(error)
             })
+        if (window.location.pathname || "/") {
+            history.push('/')
+        }
     }
 
     return (

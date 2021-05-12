@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { Link } from "react-router-dom"
 import { MovieSearchContext } from "./../../../context/MovieSearchContext"
 import axios from "axios"
 
@@ -15,7 +16,8 @@ function MovieCard(props) {
                     axios.post("/api/nominations", {
                         title: props.movieTitle,
                         year: props.movieYear,
-                        poster: props.movieImg
+                        poster: props.movieImg,
+                        imdbID: props.movieId
                     }).then(data => {
                         setNominationList(data.data)
                     })
@@ -36,7 +38,7 @@ function MovieCard(props) {
             <div className="card" >
                 <img className="card-img-top" style={{ height: "60vh" }} src={props.movieImg} alt="Card image cap" />
                 <div className="card-body">
-                    <h5 className="card-title" style={{ height: "fit-content", minHeight: "7vh" }}>{props.movieTitle}</h5>
+                    <Link to={`/movie/${props.movieId}`}><h5 className="card-title" style={{ height: "fit-content", minHeight: "7vh" }}>{props.movieTitle}</h5></Link>
                     <p className="card-text">
                         {props.movieYear}
                     </p>
