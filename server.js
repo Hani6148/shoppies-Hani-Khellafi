@@ -2,6 +2,7 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const mongoDBrl = require("./config/key").mongoDBrl
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +22,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  "mongodb+srv://hani6148:nani6148@cluster0.vrcdl.mongodb.net/shoppies?retryWrites=true&w=majority",
+  process.env.MONGODB_URI || mongoDBrl,
   {
     useCreateIndex: true,
     useNewUrlParser: true
