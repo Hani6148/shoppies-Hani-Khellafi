@@ -3,8 +3,10 @@ import "./NominatedListItem.css"
 import { MovieSearchContext } from "./../../../context/MovieSearchContext"
 import axios from "axios"
 function NominatedListItem(props) {
-
+    // using state and functions to update states of banner visibiluty and nomination lists
     const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
+
+    // deleting entry from nomination list
     const deleteEntry = e => {
 
         e.preventDefault()

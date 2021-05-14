@@ -18,6 +18,8 @@ function SearchBar(props) {
     const [movieInput, setMovieInput] = useState("")
     const [error, setError] = useState(false)
     const [movies, setMovies] = useContext(MovieSearchContext)
+
+    // initiating movie search
     const buttonSubmit = e => {
 
 

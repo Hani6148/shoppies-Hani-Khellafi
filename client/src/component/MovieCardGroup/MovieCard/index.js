@@ -5,6 +5,8 @@ import axios from "axios"
 
 function MovieCard(props) {
     const [, , bannerVisibility, setBannerVisibility, nominationList, setNominationList] = useContext(MovieSearchContext)
+
+    // function to save nominated movie in the mongoDB
     const saveNomination = e => {
         e.preventDefault()
         console.log("hey")

@@ -11,6 +11,8 @@ function MovieFullView(props) {
     const nominatedTitles = nominationList.map(person => person.imdbID)
     const [movieData, setMovieData] = useState({})
     const checkInclud = nominatedTitles.includes(movieData.imdbID)
+
+    // saving nominated movie to mongoDB
     const saveNomination = e => {
         e.preventDefault()
         console.log("hey")
@@ -38,7 +40,7 @@ function MovieFullView(props) {
 
 
     }
-
+    // display selected movie function executed on component mount
     useEffect(() => {
         console.log("handle", props.match.params.title)
         const { title } = props.match.params

@@ -16,6 +16,7 @@ function Header() {
     const defaultPoster = "https://lh6.googleusercontent.com/proxy/hIgFSMyx4VsuoQh8h-ZfI3IiK9uFSLZ7pG67H_1RwEBDEPiWX-odcJ0PkWriAPeqwKyC6n-12UTrNmQF2ul9DAjwKMljG3zSCCTDoTVDPexFHV9l_JD5WMbmpnUJqWLqYA=s0-d"
     const [NominationVisibility, setNominationVisibility] = useState(false)
 
+    //show and hide nomination on nomination-button click
     const showNominations = (e) => {
 
         if (NominationVisibility || nominationList.length == 0) {
